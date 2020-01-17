@@ -1,2 +1,2 @@
 import React from "react";
-import Square from "../Block/block";
+import Block from "../Block/block";
