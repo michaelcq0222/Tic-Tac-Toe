@@ -28,5 +28,8 @@ it('renders game status correctly', () => {
     const winner = wrapper.find('div.game-status').children().first().text()
     expect(winner).toEqual('Winner: X')
 
-   
+    const reset = wrapper.find('button.reset')
+    reset.simulate('click')
+    const firstPlayer = wrapper.find('div.game-status').children().first().text()
+    expect(firstPlayer).toEqual('Next Move: X')
 });
