@@ -53,6 +53,15 @@ it('renders game status correctly', () => {
     const tie = wrapper.find('div.game-status').children().first().text()
     expect(tie).toEqual("It's a tie")
 
+    const reset = wrapper.find('button.reset')
+    reset.simulate('click')
+    const firstPlayer = wrapper.find('div.game-status').children().first().text()
+    expect(firstPlayer).toEqual('Next Move: X')
+    const undo = wrapper.find('button.undo')
+    undo.simulate('click')
+    const lastmove = wrapper.find('div.game-status').children().first().text()
+    expect(lastmove).toEqual('Next Move: X')
+
 });
 
 /*123587964*/
