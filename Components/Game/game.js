@@ -45,7 +45,12 @@ export default class Game extends React.Component {
         return null;
       }
 
-      
+      reset() {
+        this.setState({
+          step: 0,
+          X: 1
+        });
+      }
 
     render() {
         let status;
