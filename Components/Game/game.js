@@ -36,8 +36,8 @@ export default class Game extends React.Component {
               </div>
               <div className="game-status">
                 <div>{status}</div>
-                <button onClick={() => this.reset()}>New Game</button>
-                <button onClick={() => this.undo()}>Undo</button>
+                <button className="undo" onClick={() => this.reset()}>New Game</button>
+                <button className = "reset" onClick={() => this.undo()}>Undo</button>
               </div>
             </div>
           );
