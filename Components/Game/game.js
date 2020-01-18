@@ -7,7 +7,8 @@ export default class Game extends React.Component {
       this.state = {
         history: [{blocks: Array(9).fill(null)}],
         step: 0,
-        X: Math.round(Math.random())
+        X: 1,
+        select: 1
       };
     }
 
@@ -48,7 +49,7 @@ export default class Game extends React.Component {
       reset() {
         this.setState({
           step: 0,
-          X: Math.round(Math.random())
+          X: this.state.select
         });
       }
 
@@ -63,8 +64,26 @@ export default class Game extends React.Component {
         }
       }
 
+      selectChange = e => {
+        let move = [1, 0];
+        let ind = e.target.value;
+        if (this.state.step === 0) {
+          this.setState({
+            select: !this.state.select,
+            X: move[ind]
+          });
+        } else {
+          alert("Can't Make Selection in Game!!!");
+          this.setState({
+            select: move[ind],
+          });
+        }
+      };
+
+
     render() {
         let status;
+        const winner = this.win(this.state.history[this.state.step].blocks);
         if (winner) {
         status = "Winner: " + winner;
         } else {
@@ -76,6 +95,10 @@ export default class Game extends React.Component {
         }
         return (
             <div className="game">
+                <select className="select" onChange={this.selectChange}>
+                <option value="0">X</option>
+                <option value="1">O</option>
+                </select>
               <div className="game-board">
                 <Board
                   blocks={this.state.history[this.state.step].blocks}
@@ -84,8 +107,8 @@ export default class Game extends React.Component {
               </div>
               <div className="game-status">
                 <div>{status}</div>
-                <button className="undo" onClick={() => this.reset()}>New Game</button>
                 <button className = "reset" onClick={() => this.undo()}>Undo</button>
+                <button className="undo" onClick={() => this.reset()}>New Game</button>
               </div>
             </div>
           );

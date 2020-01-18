@@ -1,6 +1,6 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    margin: 30px;
   }
 
 
@@ -47,8 +47,12 @@ body {
     margin-left: 20px;
   }
 
-  .undo {
+  .reset {
     margin-top: 20px;
     margin-right: 20px;
   }
   
+  .select {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
