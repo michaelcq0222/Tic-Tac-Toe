@@ -32,4 +32,8 @@ it('renders game status correctly', () => {
     reset.simulate('click')
     const firstPlayer = wrapper.find('div.game-status').children().first().text()
     expect(firstPlayer).toEqual('Next Move: X')
+
+    
 });
+
+/*123587964*/

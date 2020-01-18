@@ -52,6 +52,8 @@ export default class Game extends React.Component {
         });
       }
 
+      
+
     render() {
         let status;
         if (winner) {
