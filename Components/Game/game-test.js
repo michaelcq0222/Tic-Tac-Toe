@@ -51,7 +51,7 @@ it('renders game status correctly', () => {
     const turn9 = wrapper.find('button.block').at(3)
     turn9.simulate('click')
     const tie = wrapper.find('div.game-status').children().first().text()
-    expect(tie).toEqual("It's a tie")
+    expect(tie).toEqual("It's a tie!")
 
     const reset = wrapper.find('button.reset')
     reset.simulate('click')

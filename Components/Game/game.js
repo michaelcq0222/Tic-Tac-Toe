@@ -7,7 +7,7 @@ export default class Game extends React.Component {
       this.state = {
         history: [{blocks: Array(9).fill(null)}],
         step: 0,
-        X: true
+        X: Math.round(Math.random())
       };
     }
 
@@ -48,7 +48,7 @@ export default class Game extends React.Component {
       reset() {
         this.setState({
           step: 0,
-          X: 1
+          X: Math.round(Math.random())
         });
       }
 
