@@ -52,7 +52,16 @@ export default class Game extends React.Component {
         });
       }
 
-      
+      undo() {
+        if (this.state.step <= 0) {
+          alert("Can't Undo");
+        } else {
+          this.setState({
+            step: this.state.step - 1,
+            X: !this.state.X
+          });
+        }
+      }
 
     render() {
         let status;
