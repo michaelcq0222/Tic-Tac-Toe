@@ -25,6 +25,13 @@ export default class Game extends React.Component {
         });
       }
 
+      reset() {
+        this.setState({
+          step: 0,
+          X: 1
+        });
+      }
+      
     render() {
         let status;
         if (winner) {
