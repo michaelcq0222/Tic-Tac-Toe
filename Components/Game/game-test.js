@@ -16,7 +16,7 @@ it('renders game status correctly', () => {
     button.simulate('click')
     const secondPlayer = wrapper.find('div.game-status').children().first().text()
     expect(secondPlayer).toEqual('Next Move: O')
-    
+
     const turn2 = wrapper.find('button.block').at(1)
     turn2.simulate('click')
     const turn3 = wrapper.find('button.block').at(4)
@@ -25,4 +25,8 @@ it('renders game status correctly', () => {
     turn4.simulate('click')
     const turn5 = wrapper.find('button.block').at(8)
     turn5.simulate('click')
+    const winner = wrapper.find('div.game-status').children().first().text()
+    expect(winner).toEqual('Winner: X')
+
+    
 });
