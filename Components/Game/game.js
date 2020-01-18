@@ -5,15 +5,25 @@ export default class Game extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        history: [
-          {
-            blocks: Array(9).fill(null)
-          }
-        ],
+        history: [{blocks: Array(9).fill(null)}],
         step: 0,
         X: true
       };
     }
+
+    handleClick(i) {
+        const history = this.state.history.slice(0, this.state.step + 1);
+        const blocks = history[history.length - 1].blocks.slice();
+        if (this.win(blocks) || blocks[i]) {
+          return;
+        }
+        blocks[i] = this.state.X ? "X" : "O";
+        this.setState({
+          history: [...history,{blocks: blocks}],
+          step: history.length,
+          X: !this.state.X
+        });
+      }
 
     render() {
         let status;
