@@ -46,3 +46,9 @@ body {
   .game-status {
     margin-left: 20px;
   }
+
+  .undo {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  
